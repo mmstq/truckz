@@ -299,7 +299,9 @@ class HomePageScreen extends GetWidget<HomePageController> {
                             ),
                           ],
                         ),
-                      ),
+                      ).onTap(() {
+                        Get.toNamed(AppRoutes.latestLorriesPageScreen);
+                      }),
                     ],
                   ),
                 ),
@@ -942,15 +944,5 @@ class HomePageScreen extends GetWidget<HomePageController> {
         ),
       ),
     );
-  }
-}
-
-
-class Dot extends StatelessWidget {
-  const Dot({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }

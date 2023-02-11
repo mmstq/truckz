@@ -50,7 +50,7 @@ class LatestLorriesPageScreen extends GetWidget<LatestLorriesPageController> {
                                           .txtMontserratBold14Gray9007e
                                           .copyWith(letterSpacing: 0.84)))),
                           Padding(
-                              padding: getPadding(left: 24, top: 21, right: 24),
+                              padding: getPadding(left: 24, top: 21, right: size.width * 0.05),
                               child: Obx(() => ListView.builder(
                                   physics: NeverScrollableScrollPhysics(),
                                   shrinkWrap: true,
