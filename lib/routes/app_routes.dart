@@ -190,6 +190,8 @@ class AppRoutes {
     GetPage(
       name: menuPageScreen,
       page: () => MenuPageScreen(),
+      transition: Transition.fadeIn,
+      transitionDuration: Duration(milliseconds: 350),
       bindings: [
         MenuPageBinding(),
       ],
@@ -197,6 +199,8 @@ class AppRoutes {
     GetPage(
       name: personalViewProfilePageScreen,
       page: () => PersonalViewProfilePageScreen(),
+      transition: Transition.leftToRight,
+      transitionDuration: Duration(milliseconds: 350),
       bindings: [
         PersonalViewProfilePageBinding(),
       ],

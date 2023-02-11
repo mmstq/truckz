@@ -19,6 +19,9 @@ class HomePageScreen extends GetWidget<HomePageController> {
           ),
           leadingWidth: 43,
           leading: AppbarImage(
+            onTap: (){
+              Get.toNamed(AppRoutes.menuPageScreen);
+            },
             height: getVerticalSize(
               14.00,
             ),
@@ -250,7 +253,9 @@ class HomePageScreen extends GetWidget<HomePageController> {
                             ),
                           ],
                         ),
-                      ),
+                      ).onTap(() {
+                        Get.toNamed(AppRoutes.transportersPageScreen);
+                      }),
                       Container(
                         decoration: AppDecoration.outlineGray9005f1.copyWith(
                           borderRadius: BorderRadiusStyle.roundedBorder20,

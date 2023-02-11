@@ -1,3 +1,5 @@
+import 'package:velocity_x/velocity_x.dart';
+
 import 'controller/menu_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:truck_booking/core/app_export.dart';
@@ -11,43 +13,6 @@ class MenuPageScreen extends GetWidget<MenuPageController> {
     return SafeArea(
         child: Scaffold(
             backgroundColor: ColorConstant.gray900,
-            appBar: CustomAppBar(
-                height: getVerticalSize(56.00),
-                leadingWidth: 56,
-                leading: AppbarImage(
-                    height: getVerticalSize(10.00),
-                    width: getHorizontalSize(27.00),
-                    svgPath: ImageConstant.imgTicket,
-                    margin: getMargin(left: 29, top: 13, bottom: 9)),
-                actions: [
-                  AppbarImage(
-                      height: getVerticalSize(11.00),
-                      width: getHorizontalSize(17.00),
-                      svgPath: ImageConstant.imgVolume,
-                      margin: getMargin(left: 6, top: 10, bottom: 11)),
-                  AppbarImage(
-                      height: getVerticalSize(11.00),
-                      width: getHorizontalSize(15.00),
-                      svgPath: ImageConstant.imgSignal,
-                      margin: getMargin(left: 5, top: 10, bottom: 11)),
-                  Container(
-                      height: getVerticalSize(12.00),
-                      width: getHorizontalSize(26.00),
-                      margin: getMargin(
-                          left: 5, top: 21.5, right: 16, bottom: 21.5),
-                      child: Stack(alignment: Alignment.centerLeft, children: [
-                        AppbarImage(
-                            height: getVerticalSize(12.00),
-                            width: getHorizontalSize(26.00),
-                            svgPath: ImageConstant.imgVideocamera),
-                        AppbarImage(
-                            height: getVerticalSize(7.00),
-                            width: getHorizontalSize(18.00),
-                            svgPath: ImageConstant.imgVideocamera7x18,
-                            margin:
-                                getMargin(left: 2, top: 2, right: 6, bottom: 2))
-                      ]))
-                ]),
             body: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -173,7 +138,9 @@ class MenuPageScreen extends GetWidget<MenuPageController> {
                                                   .txtMontserratBold12TealA400
                                                   .copyWith(
                                                       letterSpacing: 0.48)))
-                                    ]))
+                                    ])).onTap(() {
+                                      Get.toNamed(AppRoutes.personalViewProfilePageScreen);
+                            })
                           ])),
                   Align(
                       alignment: Alignment.centerLeft,
@@ -215,7 +182,9 @@ class MenuPageScreen extends GetWidget<MenuPageController> {
                                         ImageConstant.imgArrowrightWhiteA700,
                                     height: getVerticalSize(12.00),
                                     width: getHorizontalSize(6.00)))
-                          ])),
+                          ]).onTap(() {
+                        Get.toNamed(AppRoutes.myLoadsPageScreen);
+                      })),
                   Padding(
                       padding: getPadding(left: 24, top: 24, right: 24),
                       child: Row(
@@ -252,7 +221,9 @@ class MenuPageScreen extends GetWidget<MenuPageController> {
                                         ImageConstant.imgArrowrightWhiteA700,
                                     height: getVerticalSize(12.00),
                                     width: getHorizontalSize(6.00)))
-                          ])),
+                          ]).onTap(() {
+                            Get.toNamed(AppRoutes.favoritesPageScreen);
+                      })),
                   Padding(
                       padding: getPadding(left: 24, top: 24, right: 24),
                       child: Row(
@@ -305,7 +276,9 @@ class MenuPageScreen extends GetWidget<MenuPageController> {
                                               height: getVerticalSize(12.00),
                                               width: getHorizontalSize(6.00)))
                                     ]))
-                          ])),
+                          ]).onTap(() {
+                        Get.toNamed(AppRoutes.selectLanguagePageScreen);
+                      })),
                   Padding(
                       padding: getPadding(left: 24, top: 24, right: 24),
                       child: Row(
@@ -342,7 +315,9 @@ class MenuPageScreen extends GetWidget<MenuPageController> {
                                         ImageConstant.imgArrowrightWhiteA700,
                                     height: getVerticalSize(12.00),
                                     width: getHorizontalSize(6.00)))
-                          ])),
+                          ]).onTap(() {
+                        Get.toNamed(AppRoutes.customerCarePageFullScreen);
+                      })),
                   Padding(
                       padding: getPadding(left: 24, top: 24, right: 24),
                       child: Row(
@@ -379,7 +354,9 @@ class MenuPageScreen extends GetWidget<MenuPageController> {
                                         ImageConstant.imgArrowrightWhiteA700,
                                     height: getVerticalSize(12.00),
                                     width: getHorizontalSize(6.00)))
-                          ])),
+                          ]).onTap(() {
+                            Get.toNamed(AppRoutes.customerCarePageScreen);
+                      })),
                   Align(
                       alignment: Alignment.centerLeft,
                       child: Container(

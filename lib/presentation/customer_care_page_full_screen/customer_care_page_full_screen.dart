@@ -84,7 +84,7 @@ class CustomerCarePageFullScreen
                                           .txtMontserratBold14Gray90087
                                           .copyWith(letterSpacing: 1.12)))),
                           Padding(
-                              padding: getPadding(left: 23, top: 27, right: 23),
+                              padding: getPadding(left: 23, top: 27, right: size.width * 0),
                               child: Obx(() => ListView.builder(
                                   physics: NeverScrollableScrollPhysics(),
                                   shrinkWrap: true,
@@ -105,7 +105,7 @@ class CustomerCarePageFullScreen
                               child: Container(
                                   margin: getMargin(top: 26),
                                   padding: getPadding(
-                                      left: 23, top: 22, right: 23, bottom: 22),
+                                      left: 23, top: 22, right: size.width * 0.32, bottom: 22),
                                   decoration: AppDecoration.txtFillGray9005e,
                                   child: Text("msg_authorised_franchises".tr,
                                       overflow: TextOverflow.ellipsis,
@@ -114,7 +114,7 @@ class CustomerCarePageFullScreen
                                           .txtMontserratBold14Gray90087
                                           .copyWith(letterSpacing: 1.12)))),
                           Padding(
-                              padding: getPadding(left: 23, top: 26, right: 23),
+                              padding: getPadding(left: 23, top: 26, right: size.width * 0),
                               child: Obx(() => ListView.builder(
                                   physics: NeverScrollableScrollPhysics(),
                                   shrinkWrap: true,

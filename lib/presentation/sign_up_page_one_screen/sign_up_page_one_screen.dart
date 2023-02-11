@@ -3,6 +3,7 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:truck_booking/core/app_export.dart';
 import 'package:truck_booking/widgets/custom_button.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class SignUpPageOneScreen extends StatefulWidget {
   @override
