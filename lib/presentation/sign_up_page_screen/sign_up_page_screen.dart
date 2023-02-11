@@ -117,7 +117,7 @@ class SignUpPageScreen extends GetWidget<SignUpPageController> {
                     },
                       width: 327,
                       text: "CONTINUE",
-                      margin: getMargin(left: 24, top: 36, right: 24),
+                      margin: getMargin(left: 24, top: size.height * 0.02, right: 24),
                       alignment: Alignment.center),
                   CustomButton(
 
@@ -138,7 +138,6 @@ class SignUpPageScreen extends GetWidget<SignUpPageController> {
                   Container(
                       height: getVerticalSize(2.00),
                       width: size.width,
-                      margin: getMargin(top: 48),
                       decoration:
                       BoxDecoration(color: Colors.grey.shade200)),
                   Padding(

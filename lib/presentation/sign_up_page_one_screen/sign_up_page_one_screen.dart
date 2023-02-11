@@ -109,7 +109,7 @@ class _SignUpPageOneScreenState extends State<SignUpPageOneScreen> {
                       onTap: (){
                         Navigator.pushNamed(context, '/home_page_screen');
                       },
-                      margin: getMargin(left: 24, top: 56, right: 24),
+                      margin: getMargin(left: 24, top: size.height * 0.05, right: 24),
                       alignment: Alignment.center),
                   CustomButton(
                       width: 327,
@@ -119,12 +119,10 @@ class _SignUpPageOneScreenState extends State<SignUpPageOneScreen> {
                       fontStyle: ButtonFontStyle.MontserratBold14AmberA400,
                       alignment: Alignment.center),
                   Spacer(),
-
-
                   Container(
                       height: getVerticalSize(2.00),
                       width: size.width,
-                      margin: getMargin(top: 48),
+                      margin: getMargin(top: size.height * 0.03),
                       decoration:
                       BoxDecoration(color: Colors.grey.shade200)),
                   Padding(

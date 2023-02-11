@@ -1,3 +1,5 @@
+import 'package:velocity_x/velocity_x.dart';
+
 import 'controller/home_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:truck_booking/core/app_export.dart';
@@ -173,7 +175,9 @@ class HomePageScreen extends GetWidget<HomePageController> {
                           style: AppStyle.txtMontserratBold14AmberA400.copyWith(
                             letterSpacing: 0.28,
                           ),
-                        ),
+                        ).onTap((){
+                          Get.toNamed(AppRoutes.selectLocationPageScreen);
+                        }),
                       ),
                     ],
                   ),
@@ -337,7 +341,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                             children: [
                               Padding(
                                 padding: getPadding(
-                                  left: 18,
+                                  left: size.width * 0.03,
                                   top: 18,
                                   bottom: 122,
                                 ),
@@ -354,7 +358,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                               Padding(
                                 padding: getPadding(
                                   left: 18,
-                                  top: 18,
+                                  top: 15,
                                   right: 20,
                                   bottom: 14,
                                 ),
@@ -452,9 +456,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Container(
-                                            height: getVerticalSize(
-                                              32.00,
-                                            ),
+                                            height: size.height * 0.05,
                                             width: getHorizontalSize(
                                               92.00,
                                             ),
@@ -637,7 +639,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                             children: [
                               Padding(
                                 padding: getPadding(
-                                  left: 18,
+                                  left: size.width * 0.03,
                                   top: 18,
                                   bottom: 83,
                                 ),
@@ -762,7 +764,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                             children: [
                               Padding(
                                 padding: getPadding(
-                                  left: 18,
+                                  left: size.width * 0.03,
                                   top: 18,
                                   bottom: 79,
                                 ),
@@ -888,57 +890,50 @@ class HomePageScreen extends GetWidget<HomePageController> {
                           ),
                         ),
                       ),
-                      CustomTextFormField(
-                        width: 251,
-                        focusNode: FocusNode(),
-                        controller: controller.floatingButtonController,
-                        hintText: "lbl_attach_lorries".tr,
-                        margin: getMargin(
-                          left: 10,
-                          top: 171,
-                          right: 8,
-                          bottom: 171,
-                        ),
-                        variant: TextFormFieldVariant.OutlineBlueA7004c,
-                        fontStyle: TextFormFieldFontStyle.MontserratBold14,
-                        textInputAction: TextInputAction.done,
-                        alignment: Alignment.topRight,
-                        suffix: Container(
-                          padding: getPadding(
-                            all: 11,
-                          ),
-                          margin: getMargin(
-                            left: 24,
-                            top: 14,
-                            right: 14,
-                            bottom: 14,
-                          ),
-                          decoration: BoxDecoration(
-                            color: ColorConstant.whiteA7005f,
-                            borderRadius: BorderRadius.circular(
-                              getHorizontalSize(
-                                7.00,
-                              ),
-                            ),
-                          ),
-                          child: CommonImageView(
-                            svgPath: ImageConstant.imgPlus,
-                          ),
-                        ),
-                        suffixConstraints: BoxConstraints(
-                          minWidth: getHorizontalSize(
-                            10.00,
-                          ),
-                          minHeight: getVerticalSize(
-                            10.00,
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ),
               ],
             ),
+          ),
+        ),
+        floatingActionButton: Container(
+          width: 251,
+          height: 60,
+          decoration: BoxDecoration(
+              color: Color(0xFF225EFF),
+            borderRadius: BorderRadius.circular(12)
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Padding(
+                padding: getPadding(
+                  left: 20,
+                ),
+                child: Text(
+                  "lbl_attach_lorries".tr,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.left,
+                  style: AppStyle.txtMontserratBold14Gray9007e.copyWith(
+                    color: Colors.white,
+                    letterSpacing: 1.12,
+                  ),
+                ),
+              ),
+              Container(
+                padding: getPadding(all: 11),
+                decoration: BoxDecoration(
+                  color: Colors.blue.withOpacity(0.3),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Container(
+                  child: CommonImageView(
+                    svgPath: ImageConstant.imgPlus,
+                  ),
+                )
+              )
+            ],
           ),
         ),
       ),
