@@ -16,13 +16,29 @@ class TransportersPageScreen extends GetWidget<TransportersPageController> {
             backgroundColor: ColorConstant.whiteA700,
             appBar: CustomAppBar(
                 height: getVerticalSize(56.00),
-                leadingWidth: 64,
-                leading: AppbarIconbutton(
-                    svgPath: ImageConstant.imgArrowleft,
-                    margin: getMargin(left: 24, top: 8, bottom: 8),
-                    onTap: onTapArrowleft4),
+                leadingWidth: 60,
+                leading: Container(
+                  alignment: Alignment.center,
+                  margin: EdgeInsets.only(left: 8, top: 8),
+                  height: 50,
+                  width: 50,
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.arrow_back_ios_new_rounded,
+                      size: 20,
+                      color: Colors.black,
+                    ),
+                    onPressed: () {
+                      onTapArrowleft4();
+                    },
+                  ),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(14),
+                      border: Border.all(
+                          color: Colors.grey.shade200, width: 2)),
+                ),
                 title: AppbarTitle(
-                    text: "lbl_transporter".tr, margin: getMargin(left: 24))),
+                    text: "lbl_transporter".tr, margin: getMargin(left: 24, top: 15)),),
             body: SingleChildScrollView(
               child: Column(
                   mainAxisSize: MainAxisSize.min,

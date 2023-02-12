@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 class HomePageController extends GetxController {
   TextEditingController floatingButtonController = TextEditingController();
+  TextEditingController searchFieldController = TextEditingController();
 
   Rx<HomePageModel> homePageModelObj = HomePageModel().obs;
   RxBool isSearching = false.obs;
@@ -12,10 +13,7 @@ class HomePageController extends GetxController {
   void onReady() {
     super.onReady();
   }
-  // void changeValue(){
-  //   isSearching.value = !isSearching.value;
-  //
-  // }
+
 
 
   @override
