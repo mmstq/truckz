@@ -1,3 +1,5 @@
+import 'package:velocity_x/velocity_x.dart';
+
 import '../controller/latest_lorries_page_controller.dart';
 import '../models/listcar_item_model.dart';
 import 'package:flutter/material.dart';
@@ -5,9 +7,10 @@ import 'package:truck_booking/core/app_export.dart';
 
 // ignore: must_be_immutable
 class ListcarItemWidget extends StatelessWidget {
-  ListcarItemWidget(this.listcarItemModelObj);
+  ListcarItemWidget({required this.listcarItemModelObj, required this.onPress});
 
   ListcarItemModel listcarItemModelObj;
+  Function onPress;
 
   var controller = Get.find<LatestLorriesPageController>();
 
@@ -158,6 +161,6 @@ class ListcarItemWidget extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ).onTap(()=>onPress());
   }
 }

@@ -64,7 +64,7 @@ class LatestLorriesPageScreen extends GetWidget<LatestLorriesPageController> {
                                         .latestLorriesPageModelObj
                                         .value
                                         .listcarItemList[index];
-                                    return ListcarItemWidget(model);
+                                    return ListcarItemWidget(onPress: ()=> Get.toNamed(AppRoutes.lorryDetailPublicPageScreen),listcarItemModelObj: model);
                                   })))
                         ])))));
   }

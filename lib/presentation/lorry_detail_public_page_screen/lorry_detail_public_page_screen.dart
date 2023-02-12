@@ -92,7 +92,7 @@ class LorryDetailPublicPageScreen
                               style: AppStyle.txtMontserratBold14Gray90087
                                   .copyWith(letterSpacing: 1.12)))),
                   Padding(
-                      padding: getPadding(left: 24, top: 16, right: 24),
+                      padding: getPadding(left: 24, top: 16, right: size.width * 0.04),
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,

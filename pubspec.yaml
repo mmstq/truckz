@@ -15,6 +15,7 @@ dependencies:
   flutter_svg: ^0.22.0
   intl: ^0.17.0
   velocity_x:
+  searchbar_animation:
 dev_dependencies:
   flutter_test:
     sdk: flutter

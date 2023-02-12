@@ -1,3 +1,4 @@
+import 'package:searchbar_animation/searchbar_animation.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'controller/home_page_controller.dart';
@@ -6,7 +7,17 @@ import 'package:truck_booking/core/app_export.dart';
 import 'package:truck_booking/widgets/app_bar/appbar_image.dart';
 import 'package:truck_booking/widgets/app_bar/custom_app_bar.dart';
 
-class HomePageScreen extends GetWidget<HomePageController> {
+class HomePageScreen extends StatefulWidget {
+
+  @override
+  State<HomePageScreen> createState() => _HomePageScreenState();
+}
+
+class _HomePageScreenState extends State<HomePageScreen> {
+
+  var isSearching = false;
+  var textController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -18,7 +29,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
           ),
           leadingWidth: 43,
           leading: AppbarImage(
-            onTap: (){
+            onTap: () {
               Get.toNamed(AppRoutes.menuPageScreen);
             },
             height: getVerticalSize(
@@ -35,20 +46,31 @@ class HomePageScreen extends GetWidget<HomePageController> {
             ),
           ),
           actions: [
-            AppbarImage(
-              onTap: (){},
-              height: getSize(
-                24.00,
-              ),
-              width: getSize(
-                24.00,
-              ),
-              svgPath: ImageConstant.imgSearchGray900,
-              margin: getMargin(
-                left: 24,
-                top: 16,
-                bottom: 16,
-              ),
+            SearchBarAnimation(textEditingController: textController,
+                isOriginalAnimation: false,
+                trailingWidget: Container(),
+                secondaryButtonWidget: Icon(Icons.search, color: Colors.black),
+                enableKeyboardFocus: true,
+                buttonWidget: AppbarImage(
+                  onTap: (){
+                    // isSearching = !isSearching;
+                  },
+                  height: getSize(
+                    20,
+                  ),
+                  width: getSize(
+                    20,
+                  ),
+                  svgPath: ImageConstant.imgSearchGray900,
+                ),
+              onFieldSubmitted: (val){
+              debugPrint(val);
+              },
+              buttonElevation: 0,
+              enableButtonShadow: false,
+              enableBoxBorder: true,
+              enableBoxShadow: false,
+              searchBoxWidth: 300,
             ),
             AppbarImage(
               height: getSize(
@@ -114,8 +136,8 @@ class HomePageScreen extends GetWidget<HomePageController> {
                     top: 27,
                   ),
                   decoration: AppDecoration.outlineGray9005e.copyWith(
-                    borderRadius: BorderRadiusStyle.circleBorder13,
-                    border: Border.all(color: Colors.grey.shade200, width: 2)
+                      borderRadius: BorderRadiusStyle.circleBorder13,
+                      border: Border.all(color: Colors.grey.shade200, width: 2)
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -177,7 +199,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                           style: AppStyle.txtMontserratBold14AmberA400.copyWith(
                             letterSpacing: 0.28,
                           ),
-                        ).onTap((){
+                        ).onTap(() {
                           Get.toNamed(AppRoutes.selectLocationPageScreen);
                         }),
                       ),
@@ -245,7 +267,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                 overflow: TextOverflow.ellipsis,
                                 textAlign: TextAlign.left,
                                 style:
-                                    AppStyle.txtMontserratSemiBold16.copyWith(
+                                AppStyle.txtMontserratSemiBold16.copyWith(
                                   letterSpacing: 0.32,
                                 ),
                               ),
@@ -292,7 +314,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                 overflow: TextOverflow.ellipsis,
                                 textAlign: TextAlign.left,
                                 style:
-                                    AppStyle.txtMontserratSemiBold16.copyWith(
+                                AppStyle.txtMontserratSemiBold16.copyWith(
                                   letterSpacing: 0.32,
                                 ),
                               ),
@@ -379,9 +401,9 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                       ),
                                       child: Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                         crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                        CrossAxisAlignment.center,
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
@@ -401,7 +423,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                             ),
                                             child: CommonImageView(
                                               svgPath:
-                                                  ImageConstant.imgFavorite,
+                                              ImageConstant.imgFavorite,
                                               height: getVerticalSize(
                                                 16.00,
                                               ),
@@ -456,9 +478,9 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                       ),
                                       child: Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                         crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                        CrossAxisAlignment.center,
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Container(
@@ -471,14 +493,14 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      Alignment.centerLeft,
+                                                  Alignment.centerLeft,
                                                   child: Padding(
                                                     padding: getPadding(
                                                       right: 10,
                                                     ),
                                                     child: ClipRRect(
                                                       borderRadius:
-                                                          BorderRadius.circular(
+                                                      BorderRadius.circular(
                                                         getHorizontalSize(
                                                           16.00,
                                                         ),
@@ -499,7 +521,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      Alignment.centerLeft,
+                                                  Alignment.centerLeft,
                                                   child: Container(
                                                     margin: getMargin(
                                                       left: 20,
@@ -509,18 +531,18 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                                         .outlineWhiteA700
                                                         .copyWith(
                                                       borderRadius:
-                                                          BorderRadiusStyle
-                                                              .circleBorder17,
+                                                      BorderRadiusStyle
+                                                          .circleBorder17,
                                                     ),
                                                     child: Column(
                                                       mainAxisSize:
-                                                          MainAxisSize.min,
+                                                      MainAxisSize.min,
                                                       crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .center,
+                                                      CrossAxisAlignment
+                                                          .center,
                                                       mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .start,
+                                                      MainAxisAlignment
+                                                          .start,
                                                       children: [
                                                         Padding(
                                                           padding: getPadding(
@@ -532,10 +554,10 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                                           child: Text(
                                                             "lbl_sa".tr,
                                                             overflow:
-                                                                TextOverflow
-                                                                    .ellipsis,
+                                                            TextOverflow
+                                                                .ellipsis,
                                                             textAlign:
-                                                                TextAlign.left,
+                                                            TextAlign.left,
                                                             style: AppStyle
                                                                 .txtMontserratMedium12,
                                                           ),
@@ -546,7 +568,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      Alignment.centerRight,
+                                                  Alignment.centerRight,
                                                   child: Padding(
                                                     padding: getPadding(
                                                       left: 20,
@@ -554,7 +576,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                                     ),
                                                     child: ClipRRect(
                                                       borderRadius:
-                                                          BorderRadius.circular(
+                                                      BorderRadius.circular(
                                                         getHorizontalSize(
                                                           16.00,
                                                         ),
@@ -575,7 +597,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      Alignment.centerRight,
+                                                  Alignment.centerRight,
                                                   child: Container(
                                                     margin: getMargin(
                                                       left: 10,
@@ -590,13 +612,13 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                                         .txtOutlineWhiteA700
                                                         .copyWith(
                                                       borderRadius:
-                                                          BorderRadiusStyle
-                                                              .txtCircleBorder16,
+                                                      BorderRadiusStyle
+                                                          .txtCircleBorder16,
                                                     ),
                                                     child: Text(
                                                       "lbl_ta".tr,
                                                       overflow:
-                                                          TextOverflow.ellipsis,
+                                                      TextOverflow.ellipsis,
                                                       textAlign: TextAlign.left,
                                                       style: AppStyle
                                                           .txtMontserratMedium12,
@@ -677,9 +699,9 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                       ),
                                       child: Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                         crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                        CrossAxisAlignment.center,
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
@@ -699,7 +721,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                             ),
                                             child: CommonImageView(
                                               svgPath:
-                                                  ImageConstant.imgFavorite,
+                                              ImageConstant.imgFavorite,
                                               height: getVerticalSize(
                                                 16.00,
                                               ),
@@ -802,9 +824,9 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                       ),
                                       child: Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                         crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                        CrossAxisAlignment.center,
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
@@ -823,7 +845,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                             ),
                                             child: CommonImageView(
                                               svgPath:
-                                                  ImageConstant.imgFavorite,
+                                              ImageConstant.imgFavorite,
                                               height: getVerticalSize(
                                                 16.00,
                                               ),
@@ -859,9 +881,9 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                       ),
                                       child: Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                         crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                        CrossAxisAlignment.center,
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
@@ -884,7 +906,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                             overflow: TextOverflow.ellipsis,
                                             textAlign: TextAlign.left,
                                             style:
-                                                AppStyle.txtMontserratMedium14,
+                                            AppStyle.txtMontserratMedium14,
                                           ),
                                         ],
                                       ),
@@ -908,7 +930,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
           height: 60,
           decoration: BoxDecoration(
               color: Color(0xFF225EFF),
-            borderRadius: BorderRadius.circular(12)
+              borderRadius: BorderRadius.circular(12)
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -928,16 +950,16 @@ class HomePageScreen extends GetWidget<HomePageController> {
                 ),
               ),
               Container(
-                padding: getPadding(all: 11),
-                decoration: BoxDecoration(
-                  color: Colors.blue.withOpacity(0.3),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Container(
-                  child: CommonImageView(
-                    svgPath: ImageConstant.imgPlus,
+                  padding: getPadding(all: 11),
+                  decoration: BoxDecoration(
+                    color: Colors.blue.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(8),
                   ),
-                )
+                  child: Container(
+                    child: CommonImageView(
+                      svgPath: ImageConstant.imgPlus,
+                    ),
+                  )
               )
             ],
           ),

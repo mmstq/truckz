@@ -6,11 +6,17 @@ class HomePageController extends GetxController {
   TextEditingController floatingButtonController = TextEditingController();
 
   Rx<HomePageModel> homePageModelObj = HomePageModel().obs;
+  RxBool isSearching = false.obs;
 
   @override
   void onReady() {
     super.onReady();
   }
+  // void changeValue(){
+  //   isSearching.value = !isSearching.value;
+  //
+  // }
+
 
   @override
   void onClose() {
