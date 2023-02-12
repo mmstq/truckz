@@ -14,16 +14,47 @@ class MyLoadsPageScreen extends GetWidget<MyLoadsPageController> {
             appBar: CustomAppBar(
                 height: getVerticalSize(56.00),
                 leadingWidth: 64,
-                leading: AppbarIconbutton(
-                    svgPath: ImageConstant.imgArrowleft,
-                    margin: getMargin(left: 24, top: 8, bottom: 8),
-                    onTap: onTapArrowleft9),
+                leading: Container(
+                  alignment: Alignment.center,
+                  margin: EdgeInsets.only(left: 12, top: 8),
+                  height: 50,
+                  width: 50,
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.arrow_back_ios_new_rounded,
+                      size: 20,
+                      color: Colors.black,
+                    ),
+                    onPressed: () {
+                      onTapArrowleft9();
+                    },
+                  ),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(14),
+                      border: Border.all(
+                          color: Colors.grey.shade200, width: 2)),
+                ),
                 title: AppbarTitle(
                     text: "lbl_my_loads2".tr, margin: getMargin(left: 24)),
                 actions: [
-                  AppbarIconbutton(
-                      svgPath: ImageConstant.imgButton,
-                      margin: getMargin(left: 24, top: 8, right: 24, bottom: 8))
+                  Container(
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.only(top: 8, right: 8),
+                    height: 50,
+                    width: 50,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.more_horiz_rounded,
+                        size: 20,
+                        color: Colors.black,
+                      ),
+                      onPressed: () {},
+                    ),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(
+                            color: Colors.grey.shade200, width: 2)),
+                  ),
                 ]),
             body: SingleChildScrollView(
                 child: Padding(
@@ -163,9 +194,7 @@ class MyLoadsPageScreen extends GetWidget<MyLoadsPageController> {
                                                           MainAxisSize.max,
                                                       children: [
                                                         Container(
-                                                            height:
-                                                                getVerticalSize(
-                                                                    32.00),
+                                                            height:size.height * 0.05,
                                                             width:
                                                                 getHorizontalSize(
                                                                     92.00),
@@ -504,8 +533,7 @@ class MyLoadsPageScreen extends GetWidget<MyLoadsPageController> {
                                                       children: [
                                                         Container(
                                                             height:
-                                                                getVerticalSize(
-                                                                    32.00),
+                                                                size.height * 0.05,
                                                             width:
                                                                 getHorizontalSize(
                                                                     92.00),

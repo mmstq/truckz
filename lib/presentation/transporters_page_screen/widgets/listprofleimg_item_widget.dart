@@ -125,7 +125,7 @@ class ListprofleimgItemWidget extends StatelessWidget {
                 top: 14,
               ),
               decoration: BoxDecoration(
-                color: ColorConstant.gray90063,
+                color: Colors.grey.withOpacity(0.5),
               ),
             ),
             Padding(
