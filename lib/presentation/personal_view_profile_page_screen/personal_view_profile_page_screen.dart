@@ -1,3 +1,6 @@
+import 'package:velocity_x/velocity_x.dart';
+
+import '../../widgets/custom_button.dart';
 import '../personal_view_profile_page_screen/widgets/listratingstars_item_widget.dart';
 import 'controller/personal_view_profile_page_controller.dart';
 import 'models/listratingstars_item_model.dart';
@@ -28,10 +31,12 @@ class PersonalViewProfilePageScreen
                   AppbarIconbutton(
                       svgPath: ImageConstant.imgButton,
                       margin: getMargin(left: 24, top: 8, right: 24, bottom: 8),
-                    // onTap: ()=> PopupMenuButton(itemBuilder: (_){
-                    //   return
-                    // }),
-                  )
+                      onTap: () => showModalBottomSheet(
+                          context: context,
+                          isDismissible: false,
+                          builder: (_) {
+                            return BottomSheetModal(context);
+                          }))
                 ]),
             body: SingleChildScrollView(
                 child: Padding(
@@ -855,4 +860,201 @@ class PersonalViewProfilePageScreen
   onTapArrowleft5() {
     Get.back();
   }
+}
+
+Widget BottomSheetModal(BuildContext context) {
+  return Container(
+    height: 500,
+    color: ColorConstant.whiteA700,
+    child: Column(
+      children: [
+        Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(15),
+              child: Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.only(left: 12, top: 8),
+                height: 50,
+                width: 50,
+                child: IconButton(
+                  icon: Icon(
+                    Icons.close_rounded,
+                    size: 25,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14),
+                    border: Border.all(color: Colors.grey.shade200, width: 2)),
+              ),
+            ),
+            15.widthBox,
+            Padding(
+              padding: const EdgeInsets.only(top: 9),
+              child: "EDIT DETAILS"
+                  .text
+                  .color(Colors.black)
+                  .size(18)
+                  .letterSpacing(2)
+                  .fontFamily('Montserrat')
+                  .fontWeight(FontWeight.bold)
+                  .makeCentered(),
+            )
+          ],
+        ),
+        Divider(thickness: 2, color: Colors.grey.shade200),
+        20.heightBox,
+        Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 20, right: 20),
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(left: 10),
+                    height: 60,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(color: Colors.grey.shade200, width: 2)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          child: Text(
+                            "  +91 ",
+                            style: TextStyle(
+                                color: Colors.grey.shade600,
+                                fontFamily: "Montserrat",
+                                fontWeight: FontWeight.w600,
+                                letterSpacing: 2,
+                                fontSize: 20),
+                          ),
+                        ),
+                        Container(
+                          width: 6,
+                          child: "·"
+                              .text
+                              .fontWeight(FontWeight.bold)
+                              .size(24)
+                              .color(Colors.grey.shade600)
+                              .make(),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        SizedBox(
+                          width: 220,
+                          child: TextFormField(
+                            initialValue: "8700292081",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: "Montserrat",
+                                fontWeight: FontWeight.w600,
+                                letterSpacing: 1,
+                                fontSize: 20),
+                            decoration: InputDecoration(
+                                hintText: "Enter Number",
+                                hintStyle: TextStyle(
+                                    color: Colors.grey.shade600,
+                                    fontFamily: "Montserrat",
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 18),
+                                enabledBorder: InputBorder.none,
+                                focusedBorder: InputBorder.none),
+                          ),
+                        ),
+                        Image.asset('assets/images/img_phoneIcon.png')
+                      ],
+                    ),
+                  ),
+                  25.heightBox,
+                  Container(
+                    padding: EdgeInsets.only(left: 10),
+                    height: 60,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(color: Colors.grey.shade200, width: 2)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 10,
+                        ),
+                        SizedBox(
+                          width: 290,
+                          child: TextFormField(
+                            initialValue: "Danishmehraab@gmail.com",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: "Montserrat",
+                                fontWeight: FontWeight.w800,
+                                fontSize: 17),
+                            decoration: InputDecoration(
+                                hintText: "Enter Email....",
+                                hintStyle: TextStyle(
+                                    color: Colors.grey.shade600,
+                                    fontFamily: "Montserrat",
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 17),
+                                enabledBorder: InputBorder.none,
+                                focusedBorder: InputBorder.none),
+                          ),
+                        ),
+                        Image.asset('assets/images/img_iconEmail.png')
+                      ],
+                    ),
+                  ),
+                  25.heightBox,
+                  Container(
+                    padding: EdgeInsets.only(left: 10),
+                    height: 60,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(color: Colors.grey.shade200, width: 2)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 10,
+                        ),
+                        SizedBox(
+                          width: 290,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                                hintText: "Add website",
+                                hintStyle: TextStyle(
+                                    color: Colors.grey.shade600,
+                                    fontFamily: "Montserrat",
+                                    fontWeight: FontWeight.w800,
+                                    letterSpacing: 1,
+                                    fontSize: 17),
+                                enabledBorder: InputBorder.none,
+                                focusedBorder: InputBorder.none),
+                          ),
+                        ),
+                        Image.asset('assets/images/img_iconGlob.png')
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            20.heightBox,
+            Divider(thickness: 1, color: Colors.grey.shade200),
+            CustomButton(
+                onTap: (){},
+                width: 327,
+                text: "SAVE CHANGES",
+                fontStyle: ButtonFontStyle.MontserratBoldCustom,
+                margin: getMargin(left: 24, top: size.height * 0.02, right: 24),
+                alignment: Alignment.center),
+          ],
+        )
+      ],
+    ),
+  );
 }
