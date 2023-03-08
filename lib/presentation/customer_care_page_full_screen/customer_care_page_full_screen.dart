@@ -5,9 +5,7 @@ import 'models/listtext_item_model.dart';
 import 'models/listtext_two_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:truck_booking/core/app_export.dart';
-import 'package:truck_booking/widgets/app_bar/appbar_iconbutton.dart';
 import 'package:truck_booking/widgets/app_bar/appbar_title.dart';
-import 'package:truck_booking/widgets/app_bar/custom_app_bar.dart';
 import 'package:truck_booking/widgets/custom_button.dart';
 
 class CustomerCarePageFullScreen
@@ -17,16 +15,6 @@ class CustomerCarePageFullScreen
     return SafeArea(
         child: Scaffold(
             backgroundColor: ColorConstant.whiteA700,
-            appBar: CustomAppBar(
-                height: getVerticalSize(56.00),
-                leadingWidth: 64,
-                leading: AppbarIconbutton(
-                    svgPath: ImageConstant.imgArrowleft,
-                    margin: getMargin(left: 24, top: 8, bottom: 8),
-                    onTap: onTapArrowleft11),
-                title: AppbarTitle(
-                    text: "lbl_customer_care2".tr,
-                    margin: getMargin(left: 24))),
             body: SingleChildScrollView(
                 child: Padding(
                     padding: getPadding(top: 16),
@@ -35,6 +23,34 @@ class CustomerCarePageFullScreen
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
+
+                          Container(
+                            alignment: Alignment.center,
+                            margin: EdgeInsets.all(26),
+                            height: 50,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(14),
+                                      border:
+                                      Border.all(color: Colors.grey.shade200, width: 2)),
+                                  child: IconButton(
+                                    icon: Icon(
+                                      Icons.arrow_back_ios_new_rounded,
+                                      size: 20,
+                                    ),
+                                    onPressed: onTapArrowleft11,
+                                  ),
+                                ),
+                                AppbarTitle(
+                                    text: "lbl_select_location".tr,
+                                    margin: getMargin(left: 24))
+                              ],
+                            ),
+                          ),
                           Align(
                               alignment: Alignment.centerLeft,
                               child: Container(

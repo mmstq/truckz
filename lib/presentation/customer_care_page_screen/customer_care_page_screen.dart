@@ -11,27 +11,46 @@ class CustomerCarePageScreen extends GetWidget<CustomerCarePageController> {
     return SafeArea(
         child: Scaffold(
             backgroundColor: ColorConstant.whiteA700,
-            appBar: CustomAppBar(
-                height: getVerticalSize(56.00),
-                leadingWidth: 64,
-                leading: AppbarIconbutton(
-                    svgPath: ImageConstant.imgArrowleft,
-                    margin: getMargin(left: 24, top: 8, bottom: 8),
-                    onTap: onTapArrowleft10),
-                centerTitle: true,
-                title: AppbarTitle(text: "msg_terms_conditions2".tr)),
+
             body: SingleChildScrollView(
               child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+
+                    Container(
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.all(26),
+                      height: 50,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(14),
+                                border:
+                                Border.all(color: Colors.grey.shade200, width: 2)),
+                            child: IconButton(
+                              icon: Icon(
+                                Icons.arrow_back_ios_new_rounded,
+                                size: 20,
+                              ),
+                              onPressed: onTapArrowleft10,
+                            ),
+                          ),
+                          AppbarTitle(
+                              text: "lbl_select_location".tr,
+                              margin: getMargin(left: 24))
+                        ],
+                      ),
+                    ),
                     Container(
                         height: getVerticalSize(1.00),
                         width: size.width,
-                        margin: getMargin(top: 16),
                         decoration:
-                            BoxDecoration(color: ColorConstant.gray90063)),
+                            BoxDecoration(color: ColorConstant.gray9000a)),
                     Align(
                         alignment: Alignment.center,
                         child: Padding(

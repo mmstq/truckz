@@ -1,10 +1,7 @@
 import 'package:velocity_x/velocity_x.dart';
-
 import 'controller/menu_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:truck_booking/core/app_export.dart';
-import 'package:truck_booking/widgets/app_bar/appbar_image.dart';
-import 'package:truck_booking/widgets/app_bar/custom_app_bar.dart';
 import 'package:truck_booking/widgets/custom_icon_button.dart';
 
 class MenuPageScreen extends GetWidget<MenuPageController> {
@@ -19,7 +16,7 @@ class MenuPageScreen extends GetWidget<MenuPageController> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
-                      padding: getPadding(left: 24, top: 31, right: 24),
+                      padding: getPadding(left: 24, top: 30, right: 24),
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.center,
