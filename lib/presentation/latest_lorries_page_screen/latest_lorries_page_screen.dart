@@ -30,7 +30,7 @@ class LatestLorriesPageScreen extends GetWidget<LatestLorriesPageController> {
                             Icons.arrow_back_ios_new_rounded,
                             size: 20,
                           ),
-                          onPressed: () {},
+                          onPressed:onTapArrowleft1,
                         ),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(14),
