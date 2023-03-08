@@ -22,6 +22,16 @@ class ListprofleimgItemWidget extends StatelessWidget {
         ),
         decoration: AppDecoration.outlineGray9000f.copyWith(
           borderRadius: BorderRadiusStyle.circleBorder17,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 5,
+              color: Colors.grey.shade200,
+              offset: Offset(
+                5,
+                5
+              )
+            )
+          ]
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -176,7 +186,7 @@ class ListprofleimgItemWidget extends StatelessWidget {
                       1.00,
                     ),
                     margin: getMargin(
-                      left: 27,
+                      left: size.width * 0.02,
                     ),
                     decoration: BoxDecoration(
                       color: ColorConstant.gray90063,

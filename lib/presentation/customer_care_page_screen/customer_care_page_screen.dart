@@ -11,20 +11,34 @@ import 'package:truck_booking/widgets/app_bar/custom_app_bar.dart';
 class CustomerCarePageScreen extends GetWidget<CustomerCarePageController> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
             backgroundColor: ColorConstant.whiteA700,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(75.4),
+              preferredSize: Size.fromHeight(size.height * 0.09),
               child: Column(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      AppbarIconbutton(
-                          svgPath: ImageConstant.imgArrowleft,
-                          margin: getMargin(left: 24, top: 8, bottom: 8),
-                          onTap: onTapArrowleft10),
+                      Container(
+                        margin: getMargin(
+                          top: 8.0,
+                          left: 8.0
+                        ),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            border:
+                            Border.all(color: Colors.grey.shade200, width: 2)),
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.arrow_back_ios_new_rounded,
+                            size: 20,
+                          ),
+                          onPressed: onTapArrowleft10,
+                        ),
+                      ),
                       50.widthBox,
                       AppbarTitle(text: "msg_terms_conditions2".tr)
                     ],
@@ -38,15 +52,6 @@ class CustomerCarePageScreen extends GetWidget<CustomerCarePageController> {
                 ],
               ),
             ),
-            // CustomAppBar(
-            //     height: getVerticalSize(56.00),
-            //     leadingWidth: 64,
-            //     leading: AppbarIconbutton(
-            //         svgPath: ImageConstant.imgArrowleft,
-            //         margin: getMargin(left: 24, top: 8, bottom: 8),
-            //         onTap: onTapArrowleft10),
-            //     centerTitle: true,
-            //     title: AppbarTitle(text: "msg_terms_conditions2".tr)),
             body: ListView.builder(
                 controller: controller.scrollController,
                 itemCount: 1,

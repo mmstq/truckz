@@ -35,8 +35,8 @@ class MenuPageScreen extends GetWidget<MenuPageController> {
                                       },
                                       child: CommonImageView(
                                           svgPath: ImageConstant.imgClose40x40,
-                                          height: getSize(40.00),
-                                          width: getSize(40.00))),
+                                          height: getSize(45.00),
+                                          width: getSize(45.00))),
                                   Padding(
                                       padding: getPadding(
                                           left: 24, top: 11, bottom: 10),
