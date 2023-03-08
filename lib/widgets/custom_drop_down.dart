@@ -119,7 +119,7 @@ class CustomDropDown extends StatelessWidget {
       default:
         return BorderRadius.circular(
           getHorizontalSize(
-            10.00,
+            8.00,
           ),
         );
     }
@@ -136,7 +136,7 @@ class CustomDropDown extends StatelessWidget {
         return OutlineInputBorder(
           borderRadius: _setOutlineBorderRadius(),
           borderSide: BorderSide(
-            color: ColorConstant.gray90063,
+            color: ColorConstant.gray9000f.withOpacity(0.5),
             width: 1,
           ),
         );
@@ -151,7 +151,7 @@ class CustomDropDown extends StatelessWidget {
   _setFillColor() {
     switch (variant) {
       default:
-        return ColorConstant.gray9005e;
+        return ColorConstant.gray9000a;
     }
   }
 

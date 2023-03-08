@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:like_button/like_button.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../controller/latest_lorries_page_controller.dart';
@@ -21,7 +24,7 @@ class ListcarItemWidget extends StatelessWidget {
         top: 8.0,
         bottom: 8.0,
       ),
-      decoration: AppDecoration.outlineGray9000f1.copyWith(
+      decoration: AppDecoration.outlineGray9000f.copyWith(
         borderRadius: BorderRadiusStyle.circleBorder17,
       ),
       child: Row(
@@ -79,20 +82,20 @@ class ListcarItemWidget extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: getPadding(
-                            top: 1,
-                            bottom: 3,
-                          ),
-                          child: CommonImageView(
-                            svgPath: ImageConstant.imgFavorite,
-                            height: getVerticalSize(
-                              16.00,
+                            padding: getPadding(
+                              top: 1,
+                              bottom: 3,
                             ),
-                            width: getHorizontalSize(
-                              18.00,
-                            ),
-                          ),
-                        ),
+                            child: LikeButton(
+                              likeBuilder: (bool isLiked) {
+                                return isLiked
+                                    ? Icon(
+                                        Icons.favorite,
+                                        color: Colors.red,
+                                      )
+                                    : Icon(Icons.favorite_border, color: ColorConstant.gray90063,);
+                              },
+                            )),
                       ],
                     ),
                   ),
@@ -132,7 +135,7 @@ class ListcarItemWidget extends StatelessWidget {
                             top: 3,
                           ),
                           child: Text(
-                            "msg_quantity_20_tonnes".tr,
+                            "Quantity • ${Random().nextInt(20) + 5}",
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.left,
                             style: AppStyle.txtMontserratSemiBold14Gray90090
@@ -146,7 +149,7 @@ class ListcarItemWidget extends StatelessWidget {
                             bottom: 3,
                           ),
                           child: Text(
-                            "lbl_21_hr".tr,
+                            "${Random().nextInt(19) + 5} hr",
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.left,
                             style: AppStyle.txtMontserratMedium14,
@@ -161,6 +164,6 @@ class ListcarItemWidget extends StatelessWidget {
           ),
         ],
       ),
-    ).onTap(()=>onPress());
+    ).onTap(() => onPress());
   }
 }

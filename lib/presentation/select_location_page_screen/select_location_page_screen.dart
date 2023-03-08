@@ -12,38 +12,39 @@ class SelectLocationPageScreen extends GetWidget<SelectLocationPageController> {
     return SafeArea(
         child: Scaffold(
             backgroundColor: ColorConstant.whiteA700,
-            appBar: CustomAppBar(
-                height: getVerticalSize(56.00),
-                leadingWidth: 64,
-                leading: Container(
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.only(left: 10, top: 8),
-                  height: 50,
-                  width: 50,
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.arrow_back_ios_new_rounded,
-                      size: 20,
-                      color: Colors.black,
-                    ),
-                    onPressed: () {
-                      onTapArrowleft();
-                    },
-                  ),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(14),
-                      border: Border.all(
-                          color: Colors.grey.shade200, width: 2)),
-                ),
-                title: AppbarTitle(
-                    text: "lbl_select_location".tr,
-                    margin: getMargin(left: 24, top: 10))),
             body: SingleChildScrollView(
               child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    Container(
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.all(26),
+                      height: 50,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(14),
+                                border:
+                                Border.all(color: Colors.grey.shade200, width: 2)),
+                            child: IconButton(
+                              icon: Icon(
+                                Icons.arrow_back_ios_new_rounded,
+                                size: 20,
+                              ),
+                              onPressed: onTapArrowleft,
+                            ),
+                          ),
+                          AppbarTitle(
+                              text: "lbl_select_location".tr,
+                              margin: getMargin(left: 24))
+                        ],
+                      ),
+                    ),
                     CustomTextFormField(
                         width: 327,
                         focusNode: FocusNode(),
@@ -73,7 +74,7 @@ class SelectLocationPageScreen extends GetWidget<SelectLocationPageController> {
                     Container(
                         width: double.infinity,
                         margin: getMargin(left: 24, top: 14, right: 24),
-                        decoration: AppDecoration.outlineGray9005f2.copyWith(
+                        decoration: AppDecoration.outlineGray9000f.copyWith(
                             borderRadius: BorderRadiusStyle.circleBorder13),
                         child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -88,22 +89,20 @@ class SelectLocationPageScreen extends GetWidget<SelectLocationPageController> {
                                       textAlign: TextAlign.left,
                                       style: AppStyle.txtMontserratMedium16Gray900
                                           .copyWith(letterSpacing: 0.64))),
-                              Align(
-                                  alignment: Alignment.center,
-                                  child: Padding(
-                                      padding:
-                                      getPadding(left: 16, top: 8, right: 16),
-                                      child: Text("msg_faridabad_gurgaon".tr,
-                                          overflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.left,
-                                          style: AppStyle.txtMontserratMedium14
-                                              .copyWith(letterSpacing: 0.56)))),
+                              Padding(
+                                  padding:
+                                  getPadding(left: 16, top: 8, right: 16),
+                                  child: Text("msg_faridabad_gurgaon".tr,
+                                      overflow: TextOverflow.ellipsis,
+                                      textAlign: TextAlign.left,
+                                      style: AppStyle.txtMontserratMedium14
+                                          .copyWith(letterSpacing: 0.56))),
                               Container(
                                   height: getVerticalSize(1.00),
-                                  width: getHorizontalSize(327.00),
-                                  margin: getMargin(top: 12),
+                                  width: double.maxFinite,
+                                  margin: getMargin(top: 12, left: 24, right: 24),
                                   decoration: BoxDecoration(
-                                      color: ColorConstant.gray90063)),
+                                      color: ColorConstant.gray9000f)),
                               Padding(
                                   padding:
                                   getPadding(left: 16, top: 15, right: 16),
@@ -122,10 +121,10 @@ class SelectLocationPageScreen extends GetWidget<SelectLocationPageController> {
                                           .copyWith(letterSpacing: 0.56))),
                               Container(
                                   height: getVerticalSize(1.00),
-                                  width: getHorizontalSize(327.00),
-                                  margin: getMargin(top: 14),
+                                  width: double.maxFinite,
+                                  margin: getMargin(top: 12, left: 24, right: 24),
                                   decoration: BoxDecoration(
-                                      color: ColorConstant.gray90063)),
+                                      color: ColorConstant.gray9000f)),
                               Padding(
                                   padding:
                                   getPadding(left: 16, top: 14, right: 16),
@@ -143,14 +142,12 @@ class SelectLocationPageScreen extends GetWidget<SelectLocationPageController> {
                                       style: AppStyle.txtMontserratMedium14
                                           .copyWith(letterSpacing: 0.56)))
                             ])),
-                    Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                            padding: getPadding(top: 20),
-                            child: CommonImageView(
-                                imagePath: ImageConstant.imgIllustration,
-                                height: getVerticalSize(323.00),
-                                width: getHorizontalSize(375.00))))
+                    Padding(
+                        padding: getPadding(top: 20),
+                        child: CommonImageView(
+                            imagePath: ImageConstant.imgIllustration,
+                            height: getVerticalSize(323.00),
+                            width: getHorizontalSize(375.00)))
                   ]),
             )));
   }

@@ -1,3 +1,4 @@
+import 'package:like_button/like_button.dart';
 import 'package:searchbar_animation/searchbar_animation.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -221,100 +222,107 @@ class HomePageScreen extends GetWidget<HomePageController> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Container(
-                        decoration: AppDecoration.outlineGray9005f.copyWith(
-                          borderRadius: BorderRadiusStyle.roundedBorder20,
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Padding(
-                              padding: getPadding(
-                                left: 22,
-                                top: 20,
-                                right: 22,
-                              ),
-                              child: CommonImageView(
-                                svgPath: ImageConstant.imgSettings,
-                                height: getSize(
-                                  48.00,
+                      Expanded(
+                      flex: 1,
+                        child: Container(
+                          decoration: AppDecoration.outlineGray9000f.copyWith(
+                            borderRadius: BorderRadiusStyle.roundedBorder20,
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Padding(
+                                padding: getPadding(
+                                  left: 22,
+                                  top: 20,
+                                  right: 22,
                                 ),
-                                width: getSize(
-                                  48.00,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: getPadding(
-                                left: 18,
-                                top: 20,
-                                right: 18,
-                                bottom: 14,
-                              ),
-                              child: Text(
-                                "lbl_transporters".tr,
-                                overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.left,
-                                style:
-                                AppStyle.txtMontserratSemiBold16.copyWith(
-                                  letterSpacing: 0.32,
+                                child: CommonImageView(
+                                  svgPath: ImageConstant.imgSettings,
+                                  height: getSize(
+                                    48.00,
+                                  ),
+                                  width: getSize(
+                                    48.00,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ).onTap(() {
-                        Get.toNamed(AppRoutes.transportersPageScreen);
-                      }),
-                      Container(
-                        decoration: AppDecoration.outlineGray9005f1.copyWith(
-                          borderRadius: BorderRadiusStyle.roundedBorder20,
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: getPadding(
-                                left: 21,
-                                top: 20,
-                                right: 21,
-                              ),
-                              child: CommonImageView(
-                                svgPath: ImageConstant.imgComputer,
-                                height: getVerticalSize(
-                                  46.00,
+                              Padding(
+                                padding: getPadding(
+                                  left: 18,
+                                  top: 20,
+                                  right: 18,
+                                  bottom: 14,
                                 ),
-                                width: getHorizontalSize(
-                                  49.00,
+                                child: Text(
+                                  "lbl_transporters".tr,
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.left,
+                                  style:
+                                  AppStyle.txtMontserratSemiBold16.copyWith(
+                                    letterSpacing: 0.32,
+                                  ),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding: getPadding(
-                                left: 18,
-                                top: 20,
-                                right: 18,
-                                bottom: 16,
-                              ),
-                              child: Text(
-                                "lbl_live_lorries".tr,
-                                overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.left,
-                                style:
-                                AppStyle.txtMontserratSemiBold16.copyWith(
-                                  letterSpacing: 0.32,
+                            ],
+                          ),
+                        ).onTap(() {
+                          Get.toNamed(AppRoutes.transportersPageScreen);
+                        }),
+                      ),
+                      SizedBox(width: 20,),
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          decoration: AppDecoration.outlineGray9000f.copyWith(
+                            borderRadius: BorderRadiusStyle.roundedBorder20,
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: getPadding(
+                                  left: 21,
+                                  top: 20,
+                                  right: 21,
+                                ),
+                                child: CommonImageView(
+                                  svgPath: ImageConstant.imgComputer,
+                                  height: getVerticalSize(
+                                    46.00,
+                                  ),
+                                  width: getHorizontalSize(
+                                    49.00,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ).onTap(() {
-                        Get.toNamed(AppRoutes.latestLorriesPageScreen);
-                      }),
+                              Padding(
+                                padding: getPadding(
+                                  left: 18,
+                                  top: 20,
+                                  right: 18,
+                                  bottom: 16,
+                                ),
+                                child: Text(
+                                  "lbl_live_lorries".tr,
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.left,
+                                  style:
+                                  AppStyle.txtMontserratSemiBold16.copyWith(
+                                    letterSpacing: 0.32,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ).onTap(() {
+                          Get.toNamed(AppRoutes.latestLorriesPageScreen);
+                        }),
+                      ),
                     ],
                   ),
                 ),
@@ -332,581 +340,417 @@ class HomePageScreen extends GetWidget<HomePageController> {
                     ),
                   ),
                 ),
+                SizedBox(height: 24,),
                 Container(
-                  height: getVerticalSize(
-                    443.00,
-                  ),
-                  width: getHorizontalSize(
-                    327.00,
-                  ),
                   margin: getMargin(
-                    top: 16,
+                    bottom: 10,
                   ),
-                  child: Stack(
-                    alignment: Alignment.bottomLeft,
+                  decoration: AppDecoration.outlineGray9000f.copyWith(
+                    borderRadius: BorderRadiusStyle.circleBorder17,
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
                     children: [
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: Container(
-                          margin: getMargin(
-                            bottom: 10,
+                      Padding(
+                        padding: getPadding(
+                          left: size.width * 0.03,
+                          top: 18,
+                          bottom: 122,
+                        ),
+                        child: CommonImageView(
+                          svgPath: ImageConstant.imgAirplane,
+                          height: getSize(
+                            40.00,
                           ),
-                          decoration: AppDecoration.outlineGray9000f.copyWith(
-                            borderRadius: BorderRadiusStyle.circleBorder17,
+                          width: getSize(
+                            40.00,
                           ),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: getPadding(
-                                  left: size.width * 0.03,
-                                  top: 18,
-                                  bottom: 122,
-                                ),
-                                child: CommonImageView(
-                                  svgPath: ImageConstant.imgAirplane,
-                                  height: getSize(
-                                    40.00,
+                        ),
+                      ),
+                      Padding(
+                        padding: getPadding(
+                          left: 18,
+                          top: 15,
+                          right: 20,
+                          bottom: 14,
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: getHorizontalSize(
+                                231.00,
+                              ),
+                              child: Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment:
+                                CrossAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    "lbl_truck_required".tr,
+                                    overflow: TextOverflow.ellipsis,
+                                    textAlign: TextAlign.left,
+                                    style: AppStyle
+                                        .txtMontserratSemiBold14Gray90090
+                                        .copyWith(
+                                      letterSpacing: 0.56,
+                                    ),
                                   ),
-                                  width: getSize(
-                                    40.00,
-                                  ),
+                                  Padding(
+                                      padding: getPadding(
+                                        top: 1,
+                                        bottom: 3,
+                                      ),
+                                      child: LikeButton(
+                                        likeBuilder: (bool isLiked) {
+                                          return isLiked
+                                              ? Icon(
+                                            Icons.favorite,
+                                            color: Colors.red,
+                                          )
+                                              : Icon(Icons.favorite_border, color: ColorConstant.gray90063,);
+                                        },
+                                      )),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              width: getHorizontalSize(
+                                215.00,
+                              ),
+                              margin: getMargin(
+                                top: 12,
+                                right: 10,
+                              ),
+                              child: Text(
+                                "msg_banglore_electronic".tr,
+                                maxLines: null,
+                                textAlign: TextAlign.left,
+                                style: AppStyle
+                                    .txtMontserratSemiBold16Gray900a2
+                                    .copyWith(
+                                  letterSpacing: 0.64,
                                 ),
                               ),
-                              Padding(
-                                padding: getPadding(
-                                  left: 18,
-                                  top: 15,
-                                  right: 20,
-                                  bottom: 14,
+                            ),
+                            Padding(
+                              padding: getPadding(
+                                top: 13,
+                                right: 10,
+                              ),
+                              child: Text(
+                                "msg_20_tonnes_steel".tr,
+                                overflow: TextOverflow.ellipsis,
+                                textAlign: TextAlign.left,
+                                style: AppStyle.txtMontserratMedium14
+                                    .copyWith(
+                                  letterSpacing: 0.56,
                                 ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                      width: getHorizontalSize(
-                                        231.00,
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Text(
-                                            "lbl_truck_required".tr,
-                                            overflow: TextOverflow.ellipsis,
-                                            textAlign: TextAlign.left,
-                                            style: AppStyle
-                                                .txtMontserratSemiBold14Gray90090
-                                                .copyWith(
-                                              letterSpacing: 0.56,
-                                            ),
-                                          ),
-                                          Padding(
+                              ),
+                            ),
+                            Container(
+                              width: getHorizontalSize(
+                                231.00,
+                              ),
+                              margin: getMargin(
+                                top: 11,
+                              ),
+                              child: Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment:
+                                CrossAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Container(
+                                    height: size.height * 0.05,
+                                    width: getHorizontalSize(
+                                      92.00,
+                                    ),
+                                    child: Stack(
+                                      alignment: Alignment.centerLeft,
+                                      children: [
+                                        Align(
+                                          alignment:
+                                          Alignment.centerLeft,
+                                          child: Padding(
                                             padding: getPadding(
-                                              top: 1,
-                                              bottom: 1,
+                                              right: 10,
                                             ),
-                                            child: CommonImageView(
-                                              svgPath:
-                                              ImageConstant.imgFavorite,
-                                              height: getVerticalSize(
-                                                16.00,
+                                            child: ClipRRect(
+                                              borderRadius:
+                                              BorderRadius.circular(
+                                                getHorizontalSize(
+                                                  16.00,
+                                                ),
                                               ),
-                                              width: getHorizontalSize(
-                                                18.00,
+                                              child: CommonImageView(
+                                                imagePath: ImageConstant
+                                                    .imgImage,
+                                                height: getSize(
+                                                  32.00,
+                                                ),
+                                                width: getSize(
+                                                  32.00,
+                                                ),
+                                                fit: BoxFit.cover,
                                               ),
                                             ),
                                           ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      width: getHorizontalSize(
-                                        215.00,
-                                      ),
-                                      margin: getMargin(
-                                        top: 12,
-                                        right: 10,
-                                      ),
-                                      child: Text(
-                                        "msg_banglore_electronic".tr,
-                                        maxLines: null,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle
-                                            .txtMontserratSemiBold16Gray900a2
-                                            .copyWith(
-                                          letterSpacing: 0.64,
                                         ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: getPadding(
-                                        top: 13,
-                                        right: 10,
-                                      ),
-                                      child: Text(
-                                        "msg_20_tonnes_steel".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle.txtMontserratMedium14
-                                            .copyWith(
-                                          letterSpacing: 0.56,
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: getHorizontalSize(
-                                        231.00,
-                                      ),
-                                      margin: getMargin(
-                                        top: 11,
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Container(
-                                            height: size.height * 0.05,
-                                            width: getHorizontalSize(
-                                              92.00,
+                                        Align(
+                                          alignment:
+                                          Alignment.centerLeft,
+                                          child: Container(
+                                            margin: getMargin(
+                                              left: 20,
+                                              right: 20,
                                             ),
-                                            child: Stack(
-                                              alignment: Alignment.centerLeft,
+                                            decoration: AppDecoration
+                                                .outlineWhiteA700
+                                                .copyWith(
+                                              borderRadius:
+                                              BorderRadiusStyle
+                                                  .circleBorder17,
+                                            ),
+                                            child: Column(
+                                              mainAxisSize:
+                                              MainAxisSize.min,
+                                              crossAxisAlignment:
+                                              CrossAxisAlignment
+                                                  .center,
+                                              mainAxisAlignment:
+                                              MainAxisAlignment
+                                                  .start,
                                               children: [
-                                                Align(
-                                                  alignment:
-                                                  Alignment.centerLeft,
-                                                  child: Padding(
-                                                    padding: getPadding(
-                                                      right: 10,
-                                                    ),
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                      BorderRadius.circular(
-                                                        getHorizontalSize(
-                                                          16.00,
-                                                        ),
-                                                      ),
-                                                      child: CommonImageView(
-                                                        imagePath: ImageConstant
-                                                            .imgImage,
-                                                        height: getSize(
-                                                          32.00,
-                                                        ),
-                                                        width: getSize(
-                                                          32.00,
-                                                        ),
-                                                        fit: BoxFit.cover,
-                                                      ),
-                                                    ),
+                                                Padding(
+                                                  padding: getPadding(
+                                                    left: 9,
+                                                    top: 9,
+                                                    right: 10,
+                                                    bottom: 7,
                                                   ),
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                  Alignment.centerLeft,
-                                                  child: Container(
-                                                    margin: getMargin(
-                                                      left: 20,
-                                                      right: 20,
-                                                    ),
-                                                    decoration: AppDecoration
-                                                        .outlineWhiteA700
-                                                        .copyWith(
-                                                      borderRadius:
-                                                      BorderRadiusStyle
-                                                          .circleBorder17,
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                      MainAxisSize.min,
-                                                      crossAxisAlignment:
-                                                      CrossAxisAlignment
-                                                          .center,
-                                                      mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .start,
-                                                      children: [
-                                                        Padding(
-                                                          padding: getPadding(
-                                                            left: 9,
-                                                            top: 9,
-                                                            right: 10,
-                                                            bottom: 7,
-                                                          ),
-                                                          child: Text(
-                                                            "lbl_sa".tr,
-                                                            overflow:
-                                                            TextOverflow
-                                                                .ellipsis,
-                                                            textAlign:
-                                                            TextAlign.left,
-                                                            style: AppStyle
-                                                                .txtMontserratMedium12,
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                  Alignment.centerRight,
-                                                  child: Padding(
-                                                    padding: getPadding(
-                                                      left: 20,
-                                                      right: 20,
-                                                    ),
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                      BorderRadius.circular(
-                                                        getHorizontalSize(
-                                                          16.00,
-                                                        ),
-                                                      ),
-                                                      child: CommonImageView(
-                                                        imagePath: ImageConstant
-                                                            .imgImage32x32,
-                                                        height: getSize(
-                                                          32.00,
-                                                        ),
-                                                        width: getSize(
-                                                          32.00,
-                                                        ),
-                                                        fit: BoxFit.cover,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                  Alignment.centerRight,
-                                                  child: Container(
-                                                    margin: getMargin(
-                                                      left: 10,
-                                                    ),
-                                                    padding: getPadding(
-                                                      left: 10,
-                                                      top: 8,
-                                                      right: 10,
-                                                      bottom: 8,
-                                                    ),
-                                                    decoration: AppDecoration
-                                                        .txtOutlineWhiteA700
-                                                        .copyWith(
-                                                      borderRadius:
-                                                      BorderRadiusStyle
-                                                          .txtCircleBorder16,
-                                                    ),
-                                                    child: Text(
-                                                      "lbl_ta".tr,
-                                                      overflow:
-                                                      TextOverflow.ellipsis,
-                                                      textAlign: TextAlign.left,
-                                                      style: AppStyle
-                                                          .txtMontserratMedium12,
-                                                    ),
+                                                  child: Text(
+                                                    "lbl_sa".tr,
+                                                    overflow:
+                                                    TextOverflow
+                                                        .ellipsis,
+                                                    textAlign:
+                                                    TextAlign.left,
+                                                    style: AppStyle
+                                                        .txtMontserratMedium12,
                                                   ),
                                                 ),
                                               ],
                                             ),
                                           ),
-                                          Padding(
+                                        ),
+                                        Align(
+                                          alignment:
+                                          Alignment.centerRight,
+                                          child: Padding(
                                             padding: getPadding(
-                                              top: 10,
-                                              bottom: 11,
+                                              left: 20,
+                                              right: 20,
                                             ),
-                                            child: Text(
-                                              "lbl_21_hr".tr,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: AppStyle
-                                                  .txtMontserratMedium14,
+                                            child: ClipRRect(
+                                              borderRadius:
+                                              BorderRadius.circular(
+                                                getHorizontalSize(
+                                                  16.00,
+                                                ),
+                                              ),
+                                              child: CommonImageView(
+                                                imagePath: ImageConstant
+                                                    .imgImage32x32,
+                                                height: getSize(
+                                                  32.00,
+                                                ),
+                                                width: getSize(
+                                                  32.00,
+                                                ),
+                                                fit: BoxFit.cover,
+                                              ),
                                             ),
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                        Align(
+                                          alignment:
+                                          Alignment.centerRight,
+                                          child: Container(
+                                            margin: getMargin(
+                                              left: 10,
+                                            ),
+                                            padding: getPadding(
+                                              left: 10,
+                                              top: 8,
+                                              right: 10,
+                                              bottom: 8,
+                                            ),
+                                            decoration: AppDecoration
+                                                .txtOutlineWhiteA700
+                                                .copyWith(
+                                              borderRadius:
+                                              BorderRadiusStyle
+                                                  .txtCircleBorder16,
+                                            ),
+                                            child: Text(
+                                              "lbl_ta".tr,
+                                              overflow:
+                                              TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: AppStyle
+                                                  .txtMontserratMedium12,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                  Padding(
+                                    padding: getPadding(
+                                      top: 10,
+                                      bottom: 11,
+                                    ),
+                                    child: Text(
+                                      "lbl_21_hr".tr,
+                                      overflow: TextOverflow.ellipsis,
+                                      textAlign: TextAlign.left,
+                                      style: AppStyle
+                                          .txtMontserratMedium14,
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: getMargin(
+                    top: 10,
+                    bottom: 106,
+                  ),
+                  decoration: AppDecoration.outlineGray9000f.copyWith(
+                    borderRadius: BorderRadiusStyle.circleBorder17,
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding: getPadding(
+                          left: size.width * 0.03,
+                          top: 18,
+                          bottom: 83,
+                        ),
+                        child: CommonImageView(
+                          svgPath: ImageConstant.imgAirplane,
+                          height: getSize(
+                            40.00,
+                          ),
+                          width: getSize(
+                            40.00,
                           ),
                         ),
                       ),
-                      Align(
-                        alignment: Alignment.bottomLeft,
-                        child: Container(
-                          margin: getMargin(
-                            top: 106,
-                            bottom: 106,
-                          ),
-                          decoration: AppDecoration.outlineGray9000f.copyWith(
-                            borderRadius: BorderRadiusStyle.circleBorder17,
-                          ),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: getPadding(
-                                  left: size.width * 0.03,
-                                  top: 18,
-                                  bottom: 83,
-                                ),
-                                child: CommonImageView(
-                                  svgPath: ImageConstant.imgAirplane,
-                                  height: getSize(
-                                    40.00,
-                                  ),
-                                  width: getSize(
-                                    40.00,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: getPadding(
-                                  left: 18,
-                                  top: 19,
-                                  right: 20,
-                                  bottom: 16,
-                                ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                      width: getHorizontalSize(
-                                        231.00,
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Text(
-                                            "lbl_hyva_required".tr,
-                                            overflow: TextOverflow.ellipsis,
-                                            textAlign: TextAlign.left,
-                                            style: AppStyle
-                                                .txtMontserratSemiBold16Gray90090
-                                                .copyWith(
-                                              letterSpacing: 0.64,
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: getPadding(
-                                              top: 1,
-                                              bottom: 3,
-                                            ),
-                                            child: CommonImageView(
-                                              svgPath:
-                                              ImageConstant.imgFavorite,
-                                              height: getVerticalSize(
-                                                16.00,
-                                              ),
-                                              width: getHorizontalSize(
-                                                18.00,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      width: getHorizontalSize(
-                                        215.00,
-                                      ),
-                                      margin: getMargin(
-                                        top: 10,
-                                        right: 10,
-                                      ),
-                                      child: Text(
-                                        "msg_banglore_electronic".tr,
-                                        maxLines: null,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle
-                                            .txtMontserratSemiBold16Gray900a2
-                                            .copyWith(
-                                          letterSpacing: 0.64,
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: Alignment.center,
-                                      child: Padding(
-                                        padding: getPadding(
-                                          top: 38,
-                                          right: 4,
-                                        ),
-                                        child: Text(
-                                          "msg_20_tonnes_steel".tr,
-                                          overflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.left,
-                                          style: AppStyle.txtMontserratMedium14
-                                              .copyWith(
-                                            letterSpacing: 0.56,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
+                      Padding(
+                        padding: getPadding(
+                          left: 18,
+                          top: 19,
+                          right: 20,
+                          bottom: 16,
                         ),
-                      ),
-                      Align(
-                        alignment: Alignment.bottomLeft,
-                        child: Container(
-                          margin: getMargin(
-                            top: 10,
-                          ),
-                          decoration: AppDecoration.outlineGray9000f1.copyWith(
-                            borderRadius: BorderRadiusStyle.circleBorder17,
-                          ),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: getPadding(
-                                  left: size.width * 0.03,
-                                  top: 18,
-                                  bottom: 79,
-                                ),
-                                child: CommonImageView(
-                                  svgPath: ImageConstant.imgCar,
-                                  height: getSize(
-                                    40.00,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: getHorizontalSize(
+                                231.00,
+                              ),
+                              child: Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment:
+                                CrossAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    "lbl_hyva_required".tr,
+                                    overflow: TextOverflow.ellipsis,
+                                    textAlign: TextAlign.left,
+                                    style: AppStyle
+                                        .txtMontserratSemiBold16Gray90090
+                                        .copyWith(
+                                      letterSpacing: 0.64,
+                                    ),
                                   ),
-                                  width: getSize(
-                                    40.00,
+                                  Padding(
+                                      padding: getPadding(
+                                        top: 1,
+                                        bottom: 3,
+                                      ),
+                                      child: LikeButton(
+                                        likeBuilder: (bool isLiked) {
+                                          return isLiked
+                                              ? Icon(
+                                            Icons.favorite,
+                                            color: Colors.red,
+                                          )
+                                              : Icon(Icons.favorite_border, color: ColorConstant.gray90063,);
+                                        },
+                                      )),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              width: getHorizontalSize(
+                                215.00,
+                              ),
+                              margin: getMargin(
+                                top: 10,
+                                right: 10,
+                              ),
+                              child: Text(
+                                "msg_banglore_electronic".tr,
+                                maxLines: null,
+                                textAlign: TextAlign.left,
+                                style: AppStyle
+                                    .txtMontserratSemiBold16Gray900a2
+                                    .copyWith(
+                                  letterSpacing: 0.64,
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: Padding(
+                                padding: getPadding(
+                                  top: 38,
+                                  right: 4,
+                                ),
+                                child: Text(
+                                  "msg_20_tonnes_steel".tr,
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.left,
+                                  style: AppStyle.txtMontserratMedium14
+                                      .copyWith(
+                                    letterSpacing: 0.56,
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: getPadding(
-                                  left: 18,
-                                  top: 18,
-                                  right: 20,
-                                  bottom: 16,
-                                ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                      width: getHorizontalSize(
-                                        231.00,
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Text(
-                                            "lbl_lcv_available".tr,
-                                            overflow: TextOverflow.ellipsis,
-                                            textAlign: TextAlign.left,
-                                            style: AppStyle.txtMontserratBold16
-                                                .copyWith(
-                                              letterSpacing: 0.64,
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: getPadding(
-                                              top: 2,
-                                              bottom: 2,
-                                            ),
-                                            child: CommonImageView(
-                                              svgPath:
-                                              ImageConstant.imgFavorite,
-                                              height: getVerticalSize(
-                                                16.00,
-                                              ),
-                                              width: getHorizontalSize(
-                                                18.00,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      width: getHorizontalSize(
-                                        175.00,
-                                      ),
-                                      margin: getMargin(
-                                        top: 8,
-                                        right: 10,
-                                      ),
-                                      child: Text(
-                                        "msg_banglore_electronic2".tr,
-                                        maxLines: null,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle.txtMontserratMedium14,
-                                      ),
-                                    ),
-                                    Container(
-                                      width: getHorizontalSize(
-                                        231.00,
-                                      ),
-                                      margin: getMargin(
-                                        top: 11,
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding: getPadding(
-                                              top: 3,
-                                            ),
-                                            child: Text(
-                                              "msg_quantity_20_tonnes".tr,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: AppStyle
-                                                  .txtMontserratSemiBold14Gray90090
-                                                  .copyWith(
-                                                letterSpacing: 0.56,
-                                              ),
-                                            ),
-                                          ),
-                                          Text(
-                                            "lbl_21_hr".tr,
-                                            overflow: TextOverflow.ellipsis,
-                                            textAlign: TextAlign.left,
-                                            style:
-                                            AppStyle.txtMontserratMedium14,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ],

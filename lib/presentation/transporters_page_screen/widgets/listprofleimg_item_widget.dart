@@ -20,7 +20,7 @@ class ListprofleimgItemWidget extends StatelessWidget {
           top: 8.0,
           bottom: 8.0,
         ),
-        decoration: AppDecoration.outlineGray900191.copyWith(
+        decoration: AppDecoration.outlineGray9000f.copyWith(
           borderRadius: BorderRadiusStyle.circleBorder17,
         ),
         child: Column(
@@ -125,7 +125,7 @@ class ListprofleimgItemWidget extends StatelessWidget {
                 top: 14,
               ),
               decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(0.5),
+                color: ColorConstant.gray9000a,
               ),
             ),
             Padding(
