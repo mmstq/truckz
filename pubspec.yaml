@@ -19,6 +19,8 @@ dependencies:
   intl: ^0.17.0
   velocity_x:
   searchbar_animation:
+  draggable_scrollbar:
+
 
 dev_dependencies:
   flutter_test:
