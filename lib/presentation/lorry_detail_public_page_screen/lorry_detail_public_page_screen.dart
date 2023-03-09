@@ -1,3 +1,6 @@
+import 'package:like_button/like_button.dart';
+import 'package:velocity_x/velocity_x.dart';
+
 import '../lorry_detail_public_page_screen/widgets/listcall_item_widget.dart';
 import 'controller/lorry_detail_public_page_controller.dart';
 import 'models/listcall_item_model.dart';
@@ -16,38 +19,73 @@ class LorryDetailPublicPageScreen
     return SafeArea(
         child: Scaffold(
             backgroundColor: ColorConstant.whiteA700,
-            appBar: CustomAppBar(
-                height: getVerticalSize(88.00),
-                leadingWidth: 64,
-                leading: AppbarIconbutton(
-                    svgPath: ImageConstant.imgArrowleft,
-                    margin: getMargin(left: 24, top: 24, bottom: 24),
-                    onTap: onTapArrowleft2),
-                title: AppbarTitle(
-                    text: "lbl_lorry_details".tr, margin: getMargin(left: 24)),
-                actions: [
-                  CustomIconButton(
-                      height: 40,
-                      width: 40,
-                      margin: getMargin(all: 24),
-                      padding: IconButtonPadding.PaddingAll12,
-                      child: CommonImageView(
-                          svgPath: ImageConstant.imgFavorite40x40))
+            appBar: PreferredSize(
+              preferredSize: Size.fromHeight(size.height * 0.093),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        margin: getMargin(
+                            top: 8.0,
+                            left: 8.0
+                        ),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            border:
+                            Border.all(color: Colors.grey.shade200, width: 2)),
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.arrow_back_ios_new_rounded,
+                            size: 20,
+                          ),
+                          onPressed: onTapArrowleft2,
+                        ),
+                      ),
+                      AppbarTitle(text: "msg_terms_conditions2".tr),
+                      Container(
+                        padding: getPadding(
+                          top: 8,
+                          left: 8,
+                          right: 7,
+                          bottom: 8
+                        ),
+                        margin: getMargin(
+                          top: 8.0
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(14),
+                          border: Border.all(color: Colors.grey.shade200, width: 2)
+                        ),
+                        child: LikeButton(
+                          likeBuilder: (bool isLiked) {
+                            return isLiked
+                                ? Icon(
+                              Icons.favorite,
+                              color: Colors.red,
+                            )
+                                : Icon(Icons.favorite_border, color: ColorConstant.gray90063,);
+                          },
+                        ),
+                      )
+                    ],
+                  ),
+                  Container(
+                      height: getVerticalSize(1.00),
+                      width: size.width,
+                      margin: getMargin(top: 16),
+                      decoration:
+                      BoxDecoration(color: ColorConstant.gray90063)),
                 ],
-                styleType: Style.bgFillWhiteA700),
+              ),
+            ),
             body: SingleChildScrollView(
                 child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Container(
-                          height: getVerticalSize(1.00),
-                          width: size.width,
-                          decoration:
-                              BoxDecoration(color: ColorConstant.gray90063))),
                   Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
@@ -101,6 +139,7 @@ class LorryDetailPublicPageScreen
                             Container(
                                 decoration: AppDecoration.outlineGray900632
                                     .copyWith(
+                                  color: Color(0xFFF9F9F9),
                                         borderRadius:
                                             BorderRadiusStyle.circleBorder13),
                                 child: Column(
@@ -141,6 +180,7 @@ class LorryDetailPublicPageScreen
                                 margin: getMargin(left: 16),
                                 decoration: AppDecoration.outlineGray900632
                                     .copyWith(
+                                  color: Color(0xFFF9F9F9),
                                         borderRadius:
                                             BorderRadiusStyle.circleBorder13),
                                 child: Column(
@@ -177,6 +217,7 @@ class LorryDetailPublicPageScreen
                                 margin: getMargin(left: 17),
                                 decoration: AppDecoration.outlineGray900632
                                     .copyWith(
+                                  color: Color(0xFFF9F9F9),
                                         borderRadius:
                                             BorderRadiusStyle.circleBorder13),
                                 child: Column(

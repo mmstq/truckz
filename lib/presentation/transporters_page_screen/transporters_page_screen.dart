@@ -16,7 +16,7 @@ class TransportersPageScreen extends GetWidget<TransportersPageController> {
         child: Scaffold(
             backgroundColor: ColorConstant.whiteA700,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(size.height * 0.20),
+              preferredSize: Size.fromHeight(size.height * 0.21),
               child: Column(
                 children: [
                   Container(

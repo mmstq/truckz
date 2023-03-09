@@ -26,7 +26,16 @@ class ListcarItemWidget extends StatelessWidget {
       ),
       decoration: AppDecoration.outlineGray9000f.copyWith(
         borderRadius: BorderRadiusStyle.circleBorder17,
-      ),
+        boxShadow: [
+          BoxShadow(
+              blurRadius: 5,
+              color: Colors.grey.shade200,
+              offset: Offset(
+                  5,
+                  5
+              )
+          )
+        ]),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.max,

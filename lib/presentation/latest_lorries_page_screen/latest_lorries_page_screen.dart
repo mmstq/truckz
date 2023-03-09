@@ -8,15 +8,14 @@ import 'package:truck_booking/widgets/app_bar/appbar_title.dart';
 class LatestLorriesPageScreen extends GetWidget<LatestLorriesPageController> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
             backgroundColor: ColorConstant.whiteA700,
-            body: SingleChildScrollView(
-                child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
+            appBar: PreferredSize(
+              preferredSize: Size.fromHeight(size.height * 0.1),
+              child: Column(
+                children: [
                   Row(
                     children: [
                       Container(
@@ -46,7 +45,16 @@ class LatestLorriesPageScreen extends GetWidget<LatestLorriesPageController> {
                           height: getVerticalSize(1.00),
                           width: size.width,
                           decoration:
-                              BoxDecoration(color: Colors.grey.shade300))),
+                          BoxDecoration(color: Colors.grey.shade300))),
+                ],
+              ),
+            ),
+            body: SingleChildScrollView(
+                child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
                   Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(

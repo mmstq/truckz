@@ -131,6 +131,11 @@ class CustomIconButton extends StatelessWidget {
             1.00,
           ),
         );
+      case IconButtonVariant.CustomOutlineBox:
+        return Border.all(
+          color: Color(0xFFE7E6ED),
+          width: getHorizontalSize(2.00)
+        );
       case IconButtonVariant.FillAmberA400:
       case IconButtonVariant.FillTealA400:
         return null;
@@ -173,4 +178,5 @@ enum IconButtonVariant {
   OutlineGray9005f,
   FillTealA400,
   OutlineGray9005e,
+  CustomOutlineBox
 }
