@@ -190,7 +190,7 @@ class AppRoutes {
     GetPage(
       name: menuPageScreen,
       page: () => MenuPageScreen(),
-      transition: Transition.fadeIn,
+      transition: Transition.leftToRight,
       transitionDuration: Duration(milliseconds: 350),
       bindings: [
         MenuPageBinding(),

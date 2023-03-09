@@ -28,6 +28,8 @@ class ImageConstant {
 
   static String imgProfile = 'assets/images/img_profile.png';
 
+  static String imgPhoneIcon = 'assets/images/img_phoneIcon.png';
+
   static String imgArrowrightTeal300 =
       'assets/images/img_arrowright_teal_300.svg';
 

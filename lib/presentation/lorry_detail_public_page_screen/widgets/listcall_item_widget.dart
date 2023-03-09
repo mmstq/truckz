@@ -27,7 +27,7 @@ class ListcallItemWidget extends StatelessWidget {
           CustomIconButton(
             height: 48,
             width: 48,
-            variant: IconButtonVariant.OutlineGray90063_1,
+            variant: IconButtonVariant.CustomOutlineBox,
             child: CommonImageView(
               svgPath: ImageConstant.imgCall,
             ),
