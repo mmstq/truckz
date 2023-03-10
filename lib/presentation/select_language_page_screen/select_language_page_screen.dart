@@ -1,9 +1,7 @@
+import '../../widgets/app_bar/appbar_title.dart';
 import 'controller/select_language_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:truck_booking/core/app_export.dart';
-import 'package:truck_booking/widgets/app_bar/appbar_iconbutton.dart';
-import 'package:truck_booking/widgets/app_bar/appbar_title.dart';
-import 'package:truck_booking/widgets/app_bar/custom_app_bar.dart';
 import 'package:truck_booking/widgets/custom_button.dart';
 import 'package:truck_booking/widgets/custom_text_form_field.dart';
 
@@ -13,29 +11,45 @@ class SelectLanguagePageScreen extends GetWidget<SelectLanguagePageController> {
     return SafeArea(
         child: Scaffold(
             backgroundColor: ColorConstant.whiteA700,
-            appBar: CustomAppBar(
-                height: getVerticalSize(56.00),
-                leadingWidth: 64,
-                leading: AppbarIconbutton(
-                    svgPath: ImageConstant.imgArrowleft,
-                    margin: getMargin(left: 24, top: 8, bottom: 8),
-                    onTap: onTapArrowleft12),
-                title: AppbarTitle(
-                    text: "lbl_select_language".tr,
-                    margin: getMargin(left: 24))),
             body: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+                  Container(
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.all(16),
+                    height: 50,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(14),
+                              border:
+                              Border.all(color: Colors.grey.shade200, width: 2)),
+                          child: IconButton(
+                            icon: Icon(
+                              Icons.arrow_back_ios_new_rounded,
+                              size: 20,
+                            ),
+                            onPressed: ()=> Navigator.pop(context),
+                          ),
+                        ),
+                        AppbarTitle(
+                            text: "lbl_select_location".tr,
+                            margin: getMargin(left: 24))
+                      ],
+                    ),
+                  ),
                   Align(
                       alignment: Alignment.centerLeft,
                       child: Container(
                           height: getVerticalSize(1.00),
                           width: size.width,
-                          margin: getMargin(top: 16),
                           decoration:
-                              BoxDecoration(color: ColorConstant.gray90063))),
+                              BoxDecoration(color: ColorConstant.gray9000a))),
                   CustomTextFormField(
                       width: 327,
                       focusNode: FocusNode(),

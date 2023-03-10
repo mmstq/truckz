@@ -21,7 +21,7 @@ class SearchLorriesPageScreen extends GetWidget<SearchLorriesPageController> {
                 leading: AppbarIconbutton(
                     svgPath: ImageConstant.imgArrowleft,
                     margin: getMargin(left: 24, top: 8, bottom: 8),
-                    onTap: onTapArrowleft8),
+                    onTap: ()=> Navigator.pop(context)),
                 title: AppbarTitle(
                     text: "lbl_search".tr, margin: getMargin(left: 24))),
             body: SingleChildScrollView(

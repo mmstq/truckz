@@ -42,7 +42,7 @@ class CustomerCarePageFullScreen
                                       Icons.arrow_back_ios_new_rounded,
                                       size: 20,
                                     ),
-                                    onPressed: onTapArrowleft11,
+                                    onPressed: ()=> Navigator.pop(context),
                                   ),
                                 ),
                                 AppbarTitle(
@@ -57,12 +57,12 @@ class CustomerCarePageFullScreen
                                   height: getVerticalSize(1.00),
                                   width: size.width,
                                   decoration: BoxDecoration(
-                                      color: ColorConstant.gray90063))),
+                                      color: ColorConstant.gray9000a))),
                           Align(
                               alignment: Alignment.centerLeft,
                               child: Padding(
                                   padding:
-                                      getPadding(left: 24, top: 23, right: 24),
+                                      getPadding(left: 24, top: 24, right: 24),
                                   child: Text("msg_g7_group_head_office".tr,
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.left,

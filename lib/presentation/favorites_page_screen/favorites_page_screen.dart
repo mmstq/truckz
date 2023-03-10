@@ -20,7 +20,7 @@ class FavoritesPageScreen extends GetWidget<FavoritesPageController> {
                 leading: AppbarIconbutton(
                     svgPath: ImageConstant.imgArrowleft,
                     margin: getMargin(left: 24, top: 8, bottom: 8),
-                    onTap: onTapArrowleft7),
+                    onTap: ()=> Navigator.pop(context)),
                 title: AppbarTitle(
                     text: "lbl_favourites".tr, margin: getMargin(left: 24))),
             body: SingleChildScrollView(

@@ -21,7 +21,7 @@ class PostLoadFullPageScreen extends GetWidget<PostLoadFullPageController> {
                 leading: AppbarIconbutton(
                     svgPath: ImageConstant.imgArrowleft,
                     margin: getMargin(left: 24, top: 8, bottom: 8),
-                    onTap: onTapArrowleft3),
+                    onTap: ()=> Navigator.pop(context)),
                 centerTitle: true,
                 title: AppbarTitle(text: "msg_post_load_details".tr)),
             body: SingleChildScrollView(

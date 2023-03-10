@@ -36,7 +36,7 @@ class TransportersPageScreen extends GetWidget<TransportersPageController> {
                               Icons.arrow_back_ios_new_rounded,
                               size: 20,
                             ),
-                            onPressed: onTapArrowleft4,
+                            onPressed: ()=> Navigator.pop(context),
                           ),
                         ),
                         AppbarTitle(
