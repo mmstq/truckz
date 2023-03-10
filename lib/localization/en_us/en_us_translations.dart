@@ -90,7 +90,7 @@ final Map<String, String> enUs = {
   "msg_faridabad_gurgaon": "Faridabad, Gurgaon, Pali, Punjab, Ba..",
   "msg_terms_conditions2": "TERMS & CONDITIONS",
   "msg_terms_conditions3":
-      "TERMS, CONDITIONS & POLICY DOCUME- NT OF “G7” GENERAL TERMS & CONDITI- ONS",
+      "TERMS, CONDITIONS & POLICY DOCUMENT OF “G7” GENERAL TERMS & CONDITIONS",
   "msg_lorem_ipsum_is_simply":
       "Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown pri...",
   "lbl_32_tons": "32 Tons",

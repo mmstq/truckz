@@ -40,7 +40,7 @@ class LorryDetailPublicPageScreen
                             Icons.arrow_back_ios_new_rounded,
                             size: 20,
                           ),
-                          onPressed: onTapArrowleft2,
+                          onPressed: ()=> Navigator.pop(context),
                         ),
                       ),
                       AppbarTitle(text: "msg_terms_conditions2".tr),

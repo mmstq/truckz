@@ -23,7 +23,7 @@ class PersonalProfilePageFullScreen
                 leading: AppbarIconbutton(
                     svgPath: ImageConstant.imgArrowleft,
                     margin: getMargin(left: 24, top: 8, bottom: 8),
-                    onTap: onTapArrowleft6),
+                    onTap: ()=> Navigator.pop(context)),
                 title: AppbarTitle(
                     text: "lbl_profile".tr, margin: getMargin(left: 24)),
                 actions: [

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import '../controller/transporters_page_controller.dart';
 import '../models/listprofleimg_item_model.dart';
 import 'package:flutter/material.dart';
@@ -111,7 +113,7 @@ class ListprofleimgItemWidget extends StatelessWidget {
                         bottom: 29,
                       ),
                       child: Text(
-                        "lbl_4_2".tr,
+                        "${Random().nextInt(2)+3+Random().nextInt(9)/10}",
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style:
@@ -172,7 +174,7 @@ class ListprofleimgItemWidget extends StatelessWidget {
                       bottom: 6,
                     ),
                     child: Text(
-                      "lbl_240_lorries".tr,
+                      "${Random().nextInt(200)+50} • Lorries",
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
                       style: AppStyle.txtMontserratSemiBold14,
@@ -215,7 +217,7 @@ class ListprofleimgItemWidget extends StatelessWidget {
                       bottom: 7,
                     ),
                     child: Text(
-                      "lbl_since_2013".tr,
+                      "Since • ${Random().nextInt(20)+2000}",
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
                       style: AppStyle.txtMontserratSemiBold14,
