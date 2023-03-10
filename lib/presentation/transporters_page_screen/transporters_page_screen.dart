@@ -56,7 +56,7 @@ class TransportersPageScreen extends GetWidget<TransportersPageController> {
                               children: [
                                 Padding(
                                     padding: getPadding(top: 13, bottom: 8),
-                                    child: Text("msg_search_results_230".tr,
+                                    child: Text("SEARCH RESULTS (${controller.transportersPageModelObj.value.listprofleimgItemList.length})",
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                         style: AppStyle

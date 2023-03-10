@@ -1,3 +1,7 @@
+import 'dart:math';
+
+import 'package:like_button/like_button.dart';
+
 import '../controller/favorites_page_controller.dart';
 import '../models/favorites_page_item_model.dart';
 import 'package:flutter/material.dart';
@@ -87,14 +91,12 @@ class FavoritesPageItemWidget extends StatelessWidget {
                             padding: getPadding(
                               top: 4,
                             ),
-                            child: CommonImageView(
-                              svgPath: ImageConstant.imgFavorite16x18,
-                              height: getVerticalSize(
-                                16.00,
-                              ),
-                              width: getHorizontalSize(
-                                18.00,
-                              ),
+                            child: LikeButton(
+                              likeBuilder: (bool isLiked) {
+                                return isLiked
+                                    ? Icon(Icons.favorite, color: Colors.red)
+                                    : Icon(Icons.favorite_border, color: ColorConstant.gray90063);
+                              },
                             ),
                           ),
                         ],
@@ -138,7 +140,7 @@ class FavoritesPageItemWidget extends StatelessWidget {
                               top: 1,
                             ),
                             child: Text(
-                              "msg_quantity_20_tonnes".tr,
+                              "Quantity • ${Random().nextInt(30) + 5} Tonnes",
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: AppStyle.txtMontserratMedium14.copyWith(
@@ -151,7 +153,7 @@ class FavoritesPageItemWidget extends StatelessWidget {
                               bottom: 1,
                             ),
                             child: Text(
-                              "lbl_21_hr".tr,
+                              "${Random().nextInt(19) + 5} hr",
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: AppStyle.txtMontserratMedium14,

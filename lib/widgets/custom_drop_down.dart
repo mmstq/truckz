@@ -66,6 +66,7 @@ class CustomDropDown extends StatelessWidget {
       child: DropdownButtonFormField<SelectionPopupModel>(
         focusNode: focusNode,
         icon: icon,
+        borderRadius: BorderRadius.circular(12),
         style: _setFontStyle(),
         decoration: _buildDecoration(),
         items: items?.map((SelectionPopupModel item) {

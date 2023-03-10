@@ -6,17 +6,13 @@ class FavoritesPageModel {
   RxList<SelectionPopupModel> dropdownItemList = [
     SelectionPopupModel(
       id: 1,
-      title: "test",
+      title: "Newest",
       isSelected: true,
     ),
     SelectionPopupModel(
       id: 2,
-      title: "test1",
+      title: "Oldest",
     ),
-    SelectionPopupModel(
-      id: 3,
-      title: "test2",
-    )
   ].obs;
 
   RxList<FavoritesPageItemModel> favoritesPageItemList =

@@ -12,6 +12,7 @@ class CustomerCarePageFullScreen
     extends GetWidget<CustomerCarePageFullController> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
             backgroundColor: ColorConstant.whiteA700,
@@ -91,8 +92,8 @@ class CustomerCarePageFullScreen
                               child: Container(
                                   margin: getMargin(top: 24),
                                   padding: getPadding(
-                                      left: 23, top: 22, right: 23, bottom: 22),
-                                  decoration: AppDecoration.txtFillGray9005e,
+                                      left: 23, top: 22, right: size.width * 0.12, bottom: 22),
+                                  decoration: AppDecoration.txtFillGray9005e.copyWith(color: Color(0xFFF3F2F6)),
                                   child: Text("msg_authorised_business".tr,
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.left,
@@ -121,8 +122,8 @@ class CustomerCarePageFullScreen
                               child: Container(
                                   margin: getMargin(top: 26),
                                   padding: getPadding(
-                                      left: 23, top: 22, right: size.width * 0.32, bottom: 22),
-                                  decoration: AppDecoration.txtFillGray9005e,
+                                      left: 23, top: 22, right: size.width * 0.34, bottom: 22),
+                                  decoration: AppDecoration.txtFillGray9005e.copyWith(color: Color(0xFFF3F2F6)),
                                   child: Text("msg_authorised_franchises".tr,
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.left,
